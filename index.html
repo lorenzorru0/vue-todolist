@@ -24,8 +24,8 @@
             <header>
                 <img src="img/logo.png" alt="Logo Boolean" class="logo">
                 <div>
-                    <input type="text" name="newTodo" id="newTodo" placeholder="New todo">
-                    <button>Add</button>
+                    <input type="text" name="newTodo" id="newTodo" placeholder="New todo" v-model="newTodo" @keyup.enter="addTodo()">
+                    <button @click="addTodo()">Add</button>
                 </div>
             </header>
             <!-- /Header -->
@@ -33,12 +33,13 @@
             <!-- Main -->
             <main>
                 <div class="todosContainer">
-                    <ul>
+                    <ul v-if="todos.length > 0">
                         <li v-for="(todo, index) in todos " :key="index">
-                            {{todo.text}}
-                            <i class="fas fa-times"></i>
+                            <span v-bind:class="todo.done ? 'done' : 'notDone'">{{todo.text}}</span>
+                            <span> <button v-if="todo.done == false" @click="doneTodo(index)">done</button> <i class="fas fa-times" @click="removeTodo(index)"></i> </span>
                         </li>
                     </ul>
+                    <h2 v-else>There are no todo</h2>
                 </div>
             </main>
             <!-- /Main -->

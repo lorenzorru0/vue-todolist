@@ -30,6 +30,9 @@ header button {
 header input {
     width: 300px;
 }
+header button {
+    cursor: pointer;
+}
 
 /* Main */
 .todosContainer {
@@ -45,9 +48,31 @@ header input {
 .todosContainer ul li {
     border-bottom: 1px solid #dadee1;
     padding: 10px;
+    line-height: 29px;
     font-size: 1rem;
     display: flex;
     justify-content: space-between;
+}
+.todosContainer ul li i {
+    cursor: pointer;
+}
+.todosContainer h2 {
+    text-align: center;
+    padding: 20px;
+}
+.todosContainer ul li .done {
+    color: green;
+    text-decoration: line-through;
+}
+.todosContainer ul li .notDone {
+    color: red;
+}
+.todosContainer button {
+    padding: 5px;
+    border-radius: 10px;
+    margin-right: 10px;
+    border: none;
+    border: 1px solid black;
 }
 
 /* Hover effects */
