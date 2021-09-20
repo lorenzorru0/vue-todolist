@@ -73,6 +73,7 @@ header button {
     margin-right: 10px;
     border: none;
     border: 1px solid black;
+    cursor: pointer;
 }
 
 /* Hover effects */
@@ -81,4 +82,35 @@ header button:hover {
 }
 .todosContainer ul li:hover {
     background-color: #fff;
+}
+.todosContainer button:hover {
+    background-color: lightgray;
+}
+
+/* Media query */
+@media screen and (max-width: 768px) {
+    .logo {
+        width: 300px;
+    }
+    header input,
+    header button {
+        padding: 12px;
+        font-size: 0.9rem;
+    }
+    header input {
+        width: 200px;
+    }
+}
+@media screen and (max-width: 425px) {
+    .logo {
+        width: 200px;
+    }
+    header input,
+    header button {
+        padding: 10px;
+        font-size: 0.8rem;
+    }
+    header input {
+        width: 150px;
+    }
 }
