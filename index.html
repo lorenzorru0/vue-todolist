@@ -20,7 +20,28 @@
     <body>
 
         <div id="root">
-            
+            <!-- Header -->
+            <header>
+                <img src="img/logo.png" alt="Logo Boolean" class="logo">
+                <div>
+                    <input type="text" name="newTodo" id="newTodo" placeholder="New todo">
+                    <button>Add</button>
+                </div>
+            </header>
+            <!-- /Header -->
+
+            <!-- Main -->
+            <main>
+                <div class="todosContainer">
+                    <ul>
+                        <li v-for="(todo, index) in todos " :key="index">
+                            {{todo.text}}
+                            <i class="fas fa-times"></i>
+                        </li>
+                    </ul>
+                </div>
+            </main>
+            <!-- /Main -->
         </div>
         
         <!-- Scripts -->
